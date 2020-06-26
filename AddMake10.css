@@ -1,3 +1,4 @@
+
 html {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -52,6 +53,26 @@ body {
     font-family: "Noto Sans" !important;
     font-size: 18px;
     border-radius: 50%;
+}
+
+.box_holder {
+    width: 260px; height: 260px;
+    float: left;
+    margin: 5px;
+    border: 1px solid red;
+
+}
+
+.obj {
+    position: inline;
+    width: 120px;
+    height: 120px;
+    float: left;
+    border: 1px solid blue;
+}
+
+.obj:hover {
+    border: 1px solid yellow;
 }
 
 
