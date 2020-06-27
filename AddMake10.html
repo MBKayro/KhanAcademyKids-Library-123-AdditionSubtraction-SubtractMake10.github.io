@@ -9,20 +9,13 @@
 </head>
 <body>
     <div id="background"></div>
+    <!-- nút quay lại trang chủ -->
+    <a class="home_button" href="home.html">
+        <img src="img/button/home3.png">
+    </a>
     <div class="game">
-        <div class="head">
-            <!-- nút quay lại trang chủ -->
-            <div class="back"></div>
-            <span> Back</span>
-            <!-- thanh tiến trình-->
-            <div class="processBar">
-
-            </div>
-        </div>
-
-        <!-- khung game -->
+        <!-- khung nội dung -->
         <div class="gameContent">
-            <!-- Các đổi tượng ở màn hình chính-->
             <div class="object">
                 <!-- Box chứa các đơn vị tính toán như quả táo, con mèo -->
                 <div class="box_holder">
@@ -39,12 +32,34 @@
                         <div id="obj4" class="obj" onclick="crossLine('obj4')">
                             <img src="img/obj/apple.png">  
                         </div>
+                        <div id="obj5" class="obj">
+                            <img src="img/obj/space.png">  
+                        </div>
+                        <div id="obj5" class="obj">
+                            <img src="img/obj/space.png">  
+                        </div>
+                        <div id="obj5" class="obj">
+                            <img src="img/obj/space.png">  
+                        </div>
+                        <div id="obj5" class="obj">
+                            <img src="img/obj/space.png">  
+                        </div>
                     </div>
                 </div>
-                  
-
+            </div>
+            <!-- câu hỏi phép toán-->
+            <div class="question">
+                5 - 3 = ?
             </div>
         </div>
+    </div>
+    <!-- gợi ý -->
+    <div class="hint_video_button">
+        <img src="img/button/hint_video.png">
+    </div>
+    <!-- nút kiểm tra kết quả -->
+    <div class="submit_button" onclick="console.log('click submit')">
+        <img class="submit-button" src="img/button/submit.png">
     </div>
     <script type="text/javascript" src="./AddMake10.js"></script>
 </body>
