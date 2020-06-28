@@ -6,8 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link type="text/css" rel="stylesheet" href="./AddMake10.css" />
     <title>Add make 10</title>
+    <audio src="./mp3/sandypiano.mp3" autoplay></audio>
 </head>
 <body>
+    <!-- nhạc nền -->
+    <audio id="soundtrack" autoplay loop>
+        <source src="./audio/sandypiano.mp3" type="audio/mpeg">
+    </audio>
+    <!-- nhạc thông báo kết quả đúng -->
+    <audio id="true_audio" paused>
+        <source src="./audio/reyaduet.mp3" type="audio/mpeg">
+    </audio>
+    <!-- nhạc thông báo kết quả sai -->
+    <audio id="false_audio" paused>
+        <source src="./audio/peckpiano.mp3" type="audio/mpeg">
+    </audio>
+      
     <div id="background"></div>
     <!-- nút quay lại trang chủ -->
     <a class="home_button" href="home.html">
@@ -32,7 +46,7 @@
                         <div id="obj4" class="obj" onclick="crossLine('obj4')">
                             <img src="img/obj/apple.png">  
                         </div>
-                        <div id="obj5" class="obj">
+                        <!-- <div id="obj5" class="obj">
                             <img src="img/obj/space.png">  
                         </div>
                         <div id="obj5" class="obj">
@@ -43,24 +57,38 @@
                         </div>
                         <div id="obj5" class="obj">
                             <img src="img/obj/space.png">  
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
-            <!-- câu hỏi phép toán-->
-            <div class="question">
-                5 - 3 = ?
-            </div>
+        </div>
+    </div>
+    <!-- câu hỏi và nút kiểm tra kết quả -->
+    <div class="question_and_submit">
+        <div class="question">
+            5 - 3 = ?
+        </div>
+        <div class="submit_button" onclick="checkResult()">
+            <img id="submit_button_img" src="img/button/submit.png">
         </div>
     </div>
     <!-- gợi ý -->
     <div class="hint_video_button">
         <img src="img/button/hint_video.png">
     </div>
-    <!-- nút kiểm tra kết quả -->
-    <div class="submit_button" onclick="console.log('click submit')">
-        <img class="submit-button" src="img/button/submit.png">
+   
+    <!-- con gấu thông báo kết quả, gợi ý -->
+    <div class="teacher">
+        <img id="teacher_img" src="img/obj/teacher.png">
     </div>
+    <!-- thông báo kết quả đúng hay sai kèm gợi ý -->
+    <!-- <div class="announce_result">
+        <img src="img/obj/box_chat.png">
+        <p class="text_announce_result">
+            Đúng rồi, <br>
+            bạn giỏi quá!
+        </p>
+    </div> -->
     <script type="text/javascript" src="./AddMake10.js"></script>
 </body>
 </html>
