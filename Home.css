@@ -1,0 +1,28 @@
+#select_game {
+    margin-top: 180px;
+    display: flex;
+    align-content: center;
+  }
+#add_make_10 {
+    padding: 5px;
+    margin-left: auto;
+    margin-right: 10px;
+    opacity: 0.7;
+}
+#add_make_10:hover {
+    transition: 1s;
+    opacity: 1;
+    transform: translateY(-50px);
+}
+#add_make_10:hover a {
+    transition: 1s;
+    color: #111;
+}
+img {
+    height: auto;
+    width: auto;
+}
+a {
+    text-decoration: none;
+    color: #666777;
+}

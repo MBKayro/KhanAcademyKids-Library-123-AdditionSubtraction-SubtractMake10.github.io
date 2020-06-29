@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link type="text/css" rel="stylesheet" href="./SubtractMake10.css" />
+    <title>Add make 10</title>
+</head>
+<body>
+    <!-- nhạc nền -->
+    <audio id="soundtrack" autoplay loop>
+        <source src="./audio/sandypiano.mp3" type="audio/mpeg">
+    </audio>
+    <!-- nhạc thông báo kết quả đúng -->
+    <audio id="true_audio" paused>
+        <source src="./audio/reyaduet.mp3" type="audio/mpeg">
+    </audio>
+    <!-- nhạc thông báo kết quả sai -->
+    <audio id="false_audio" paused>
+        <source src="./audio/peckpiano.mp3" type="audio/mpeg">
+    </audio>
+      
+    <div id="background"></div>
+    <!-- nút quay lại trang chủ -->
+    <a class="home_button" href="Home.html">
+        <img src="img/button/home3.png">
+    </a>
+    <!-- khung nội dung -->
+    <div class="gameContent">
+        <!-- Box chứa các đơn vị tính toán như quả táo, con mèo -->
+        <div id="box_holder" class="box_holder">
+        </div>
+    </div>
+    <!-- câu hỏi và nút kiểm tra kết quả -->
+    <div class="question_and_submit">
+        <div id="question" class="question">
+            <!-- dữ liệu được lấy từ json -->
+        </div>
+        <div class="submit_button" onclick="checkResult()">
+            <img id="submit_button_img" src="img/button/submit.png">
+        </div>
+    </div>
+    <!-- gợi ý -->
+    <div class="hint_video_button">
+        <img src="img/button/hint_video.png">
+    </div>
+   
+    <!-- con gấu thông báo kết quả, gợi ý -->
+    <div class="teacher">
+        <img id="teacher_img" src="img/obj/teacher.png">
+    </div>
+    <!-- thông báo kết quả đúng hay sai kèm gợi ý -->
+    <!-- <div class="announce_result">
+        <img src="img/obj/box_chat.png">
+        <p class="text_announce_result">
+            Đúng rồi, <br>
+            bạn giỏi quá!
+        </p>
+    </div> -->
+    <script type="text/javascript" src="./SubtractMake10.js"></script>
+    <script type="text/javascript" src="data.json"></script>
+</body>
+</html>

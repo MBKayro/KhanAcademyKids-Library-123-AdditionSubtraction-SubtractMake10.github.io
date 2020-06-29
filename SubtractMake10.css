@@ -14,23 +14,12 @@ body {
     background-repeat: no-repeat;
     width: 100vw; 
     height: 100vw; 
-    overflow : hidden;
-}
-
-#background {
-    
-}
-
-.home_Button {
-
+    /* overflow: hidden; */
 }
 
 .game {
     z-index: 0;
     background-size: 100%;
-    width: 1300px;
-    height: 900px;
-    position: absolute;
     margin: 15px auto 20px;
     /*box-shadow: 0px 2px 19px 0px rgba(0, 0, 0, 0.5), 0px 2px 4px 0px rgba(0, 0, 0, 0.5);*/
 }
@@ -74,13 +63,13 @@ body {
 
 .box_holder {
     position: absolute;
-    display: inline-block;
-    vertical-align: middle;
-    transition: 0.2s;
+    top: 200px;
+    left: 200px;
+    /* display: inline-block; */
+    /* vertical-align: middle; */
+    /* transition: 0.2s; */
     border-radius: 22px 10px;
-    border: 10px solid #ffd000;
     width: 490px; height: 260px;
-    margin: 5px;
     border: 5px solid rgb(145, 135, 235);
 }
 
@@ -97,15 +86,15 @@ body {
 
 .hint_video_button {
     position: absolute;
-    top: 500px;
+    top: 90vw;
 }
 
 .teacher {
     position: absolute;
     top: 400px;
     right: 50px;
-    width: 164px;
-    height: 356px;
+    width: 246px;
+    height: 534px;
 }
 
 #teacher_img {
