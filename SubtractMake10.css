@@ -13,7 +13,7 @@ body {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     width: 100vw; 
-    height: 100vw; 
+    height: 100vh; 
     /* overflow: hidden; */
 }
 
@@ -84,14 +84,31 @@ body {
     background-color: rgb(135, 145, 235);
 }
 
-.hint_video_button {
+#hint_video {
     position: absolute;
-    top: 90vw;
+    bottom: 10px;
+}
+
+video{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.video_playing{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.678);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
 .teacher {
     position: absolute;
-    top: 400px;
+    bottom: 25px;
     right: 50px;
     width: 246px;
     height: 534px;

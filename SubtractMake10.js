@@ -74,3 +74,16 @@ function checkResult() {
     }
 };
 
+function playVideo() {
+
+    obj = document.querySelector(".video");
+
+    videoHTML = document.createElement("video")
+    videoHTML.setAttribute("src","./img/hint_video.mp4")
+    videoHTML.setAttribute("autoplay","true")
+    obj.classList.add("video_playing")
+    // videoHTML = '<video src="./img/hint_video.mp4" autoplay></video>';
+    obj.appendChild(videoHTML)
+    // obj.setAttribute("onclick", "");
+}
+

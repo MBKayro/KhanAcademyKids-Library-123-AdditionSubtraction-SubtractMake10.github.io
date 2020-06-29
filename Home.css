@@ -1,13 +1,41 @@
+@font-face{
+    font-family: "Fredoka";
+    src:url("./Fredoka-Regular.ttf")
+}
+
 #select_game {
     margin-top: 180px;
     display: flex;
     align-content: center;
-  }
+}
+
+#library {
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: "Fredoka";
+    font-weight: bold;
+    color: rgb(137, 135, 235);
+    text-align: center;
+    font-size: 50px;
+}
+
+.list_title {
+    /* width: 1000px;
+    height: 168px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    /* float: left; */
+    width: 136px;
+    height: 168px;
+    margin: 0 10px;
+}
+
 #add_make_10 {
     padding: 5px;
-    margin-left: auto;
-    margin-right: 10px;
-    opacity: 0.7;
 }
 #add_make_10:hover {
     transition: 1s;
@@ -19,10 +47,12 @@
     color: #111;
 }
 img {
-    height: auto;
-    width: auto;
+    /* height: auto;
+    width: auto; */
 }
-a {
-    text-decoration: none;
-    color: #666777;
+.line{
+    width: 2px;
+    height: 80px;
+    background-color: gray;
+    transform: translateY(-12px);
 }
