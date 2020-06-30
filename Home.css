@@ -4,9 +4,14 @@
 }
 
 #select_game {
-    margin-top: 180px;
+    font-family: "Fredoka";
+    margin-top: 0;
     display: flex;
     align-content: center;
+    position: absolute;
+    /* top: 50%; */
+    /* left: 50%; */
+    transform: translate(117%,-10%);
 }
 
 #library {
@@ -36,16 +41,16 @@
 
 #add_make_10 {
     padding: 5px;
+    text-decoration: none;
+    color: rgb(173,173,173);
 }
 #add_make_10:hover {
+    background-color: rgba(179, 179, 185, 0.555);
     transition: 1s;
     opacity: 1;
-    transform: translateY(-50px);
+    transform: translateY(-10px);
 }
-#add_make_10:hover a {
-    transition: 1s;
-    color: #111;
-}
+
 img {
     /* height: auto;
     width: auto; */
@@ -53,6 +58,15 @@ img {
 .line{
     width: 2px;
     height: 80px;
-    background-color: gray;
+    background-color: rgba(236, 231, 231, 0.959);
     transform: translateY(-12px);
+}
+
+#heading {
+    font-family: "Fredoka";
+    font-weight: bold;
+    color: rgb(133,140,156);
+    text-align: left;
+    transform: translateX(187px);
+    font-size: 35px;
 }

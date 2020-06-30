@@ -1,8 +1,4 @@
-// dữ liệu json
-// TODO: chuyen sang file data.json
-var data_json = '{"background":"./img/background/background1.png","soundtrack":"./audio/sandypiano.mp3","true_audio":"./audio/reyaduet.mp3","false_audio":"./audio/peckpiano.mp3","home_button":"img/button/home3.png","submit_button":"img/button/submit.png","hint_video_button":"img/button/hint_video.png","teacher":{"img":"img/obj/teacher.png"},"number_of_question":3,"info_question":[{"index":1,"question":"5 - 3 = ?","result":2,"obj":"apple","number_obj":4},{"index":2,"question":"2 + 6 = ?","result":8,"obj":"cheese","number_obj":8},{"index":3,"question":"7 - 3 = ?","result":4,"obj":"apple","number_obj":6}]}';
-var data = JSON.parse(data_json);
-console.log(data);
+// dữ liệu được lấy từ file data.js
 
 var number_of_question = data.number_of_question; // số phép toán
 var info_question = data.info_question; // thông tin các phép toán
@@ -75,15 +71,22 @@ function checkResult() {
 };
 
 function playVideo() {
+    obj = document.getElementById("video");
+    obj.innerHTML = `
+                    <video src="./img/hint_video.mp4" autoplay="true">
+                    </video>
+                    <img id="close_button" onclick="closeVideo()" src="/img/button/close.png">`
 
-    obj = document.querySelector(".video");
+                    
+    // obj.setAttribute("class", "video video_playing");
+    document.getElementById("hint_video").setAttribute("onclick", "");
+}
 
-    videoHTML = document.createElement("video")
-    videoHTML.setAttribute("src","./img/hint_video.mp4")
-    videoHTML.setAttribute("autoplay","true")
-    obj.classList.add("video_playing")
-    // videoHTML = '<video src="./img/hint_video.mp4" autoplay></video>';
-    obj.appendChild(videoHTML)
-    // obj.setAttribute("onclick", "");
+function closeVideo() {
+    console.log("close " + obj);
+    obj = document.getElementById("video");
+    obj.setAttribute("class", "video");
+    obj.innerHTML = '';
+    document.getElementById("hint_video").setAttribute("onclick", "playVideo()");
 }
 

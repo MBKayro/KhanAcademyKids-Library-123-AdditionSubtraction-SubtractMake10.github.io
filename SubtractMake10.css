@@ -14,7 +14,7 @@ body {
     background-repeat: no-repeat;
     width: 100vw; 
     height: 100vh; 
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .game {
@@ -32,28 +32,33 @@ body {
     align-items: center;
 }
 
-.question_and_submit {
+/* .question_and_submit {
     position: absolute;
-    top: 50px;
+    top: 200px;
     right: 400px;
     height: 250px;
     width: 400px;
-}
+} */
 
 .question {
     position: absolute;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100px;
     font-weight: bold;
+    text-align: center;
     color: brown;
+    position: absolute;
+    top: 150px;
+    right: 450px;
+    height: 250px;
+    width: 400px;
 }
 
 .submit_button {
     position: absolute;
-    top: 120px;
-    right: 120px;
-    width: 154px;
-    height: 125px;  
+    bottom: 100px;
+    right: 400px;
+    
 }
 
 #submit_button_img {
@@ -89,14 +94,26 @@ body {
     bottom: 10px;
 }
 
+#video{
+    /* position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh; */
+}
+
 video{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    border-radius: 30px;
 }
-
 .video_playing{
+    position: relative;
+}
+.video_playing::before{
+    content: "";
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.678);
@@ -106,12 +123,24 @@ video{
     z-index: 1;
 }
 
+#close_button {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(518%,20%);
+}
+
 .teacher {
     position: absolute;
-    bottom: 25px;
+    bottom: -3px;
     right: 50px;
-    width: 246px;
-    height: 534px;
+
+}
+
+.teacher::after{
+    height: 200px;
+    width: 200px;
+    background-color: white;
 }
 
 #teacher_img {
