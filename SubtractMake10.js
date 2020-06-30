@@ -62,8 +62,7 @@ function checkResult() {
             createQuestion(obj.question, obj.obj, obj.number_obj);
         }
         else {
-            
-            window.location="PassGame.html";
+            window.location="./index.html";
             console.log("Congratulation!!!");
         }
     }

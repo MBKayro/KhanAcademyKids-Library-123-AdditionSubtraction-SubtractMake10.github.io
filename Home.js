@@ -16,11 +16,11 @@ function choose(objClick) {
 
     if (obj == "123") {
         document.getElementById("heading").innerHTML= "Addition & Subtraction";
-        document.getElementById("select_game").innerHTML= `<a class="lesson" href="SubtractMake10.html"> 
+        document.getElementById("select_game").innerHTML= `<a class="lesson" href="./SubtractMake10.html"> 
             <img src="./img/home/SubtractMake10.png" alt/>
             <p> Subtract & Make 10</p>
         </a>
-        <a class="lesson" href="CrossDuck.html"> 
+        <a class="lesson" href="./CrossDuck.html"> 
             <img src="./img/home/CrossDuck.png" alt/>
             <p> Cross Duck</p>
         </a>`;
