@@ -16,9 +16,13 @@ function choose(objClick) {
 
     if (obj == "123") {
         document.getElementById("heading").innerHTML= "Addition & Subtraction";
-        document.getElementById("select_game").innerHTML= '<a id="add_make_10" href="SubtractMake10.html">' 
-        + '\n\t<img src="./img/home/SubtractMake10.png" alt/>'
-        + '\n\t<p> Subtract & Make 10</p>'
-        + '</a>';
+        document.getElementById("select_game").innerHTML= `<a class="lesson" href="SubtractMake10.html"> 
+            <img src="./img/home/SubtractMake10.png" alt/>
+            <p> Subtract & Make 10</p>
+        </a>
+        <a class="lesson" href="CrossDuck.html"> 
+            <img src="./img/home/CrossDuck.png" alt/>
+            <p> Cross Duck</p>
+        </a>`;
     }
 };

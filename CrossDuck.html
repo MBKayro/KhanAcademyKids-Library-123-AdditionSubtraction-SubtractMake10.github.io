@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link type="text/css" rel="stylesheet" href="./CrossDuck.css" />
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <title>Cross Duck</title>
+</head>
+<body>
+    <!-- nhạc nền -->
+    <audio id="soundtrack" autoplay loop>
+        <source src="./audio/sandypiano.mp3" type="audio/mpeg">
+    </audio>
+    <!-- nhạc thông báo kết quả đúng -->
+    <audio id="true_answer" >
+        <source src="./audio/thatsright.mp3" type="audio/mpeg">
+    </audio>
+    <!-- nhạc thông báo kết quả sai -->
+    <audio id="false_answer" >
+        <source src="./audio/tryagain.mp3" type="audio/mpeg">
+    </audio>
+      
+    <div id="background"></div>
+    <!-- nút quay lại trang chủ -->
+    <a class="home_button" href="index.html">
+        <img src="./img/button/home3.png">
+    </a>
+    <!-- khung nội dung -->
+    <div class="gameContent">
+        <img id="coop" src="./img/gameduck/coop2.png">
+        <div id="result_question"></div>
+        <!-- các con vịt -->
+        <div class="ducks">
+            <div id="duck_top_left" class="duck">
+                <img src="./img/gameduck/duck_top_left.png" onclick="check('duck_top_left')">
+                <div class="cross"></div>
+                <p id="text_duck_top_left" class="text"></p>
+            </div>
+            <div id="duck_top" class="duck">
+                <img src="./img/gameduck/duck_top.png" onclick="check('duck_top')">
+                <div class="cross"></div>
+                <p id="text_duck_top" class="text"></p>
+            </div>
+            <div id="duck_top_right" class="duck">
+                <img src="./img/gameduck/duck_top_right.png" onclick="check('duck_top_right')">
+                <div class="cross"></div>
+                <p id="text_duck_top_right" class="text"></p>
+            </div>
+            <div id="duck_bottom_left" class="duck">
+                <img src="./img/gameduck/duck_bottom_left.png" onclick="check('duck_bottom_left')">
+                <div class="cross"></div>
+                <p id="text_duck_bottom_left" class="text"></p>
+            </div>
+            <div id="duck_bottom_right" class="duck">
+                <img src="./img/gameduck/duck_bottom_right.png" onclick="check('duck_bottom_right')">
+                <div class="cross"></div>
+                <p id="text_duck_bottom_right" class="text"></p>
+            </div>
+        </div> 
+    </div>
+    
+    <!-- gợi ý -->
+    <!-- <div id="hint_video" onclick="playVideo()">
+        <img src="./img/button/hint_video.png">
+    </div>
+
+    <div id="video"></div> -->
+   
+    <!-- con gấu thông báo kết quả, gợi ý -->
+    <!-- <div class="teacher">
+        <img id="teacher_img" src="./img/teacher/thinking.gif" loop=infinite>
+    </div> -->
+
+    <script src="data.js"></script>
+    <script type="text/javascript" src="./CrossDuck.js"></script>
+</body>
+</html>

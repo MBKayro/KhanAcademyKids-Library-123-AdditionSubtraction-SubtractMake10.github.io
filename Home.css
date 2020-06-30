@@ -9,9 +9,7 @@
     display: flex;
     align-content: center;
     position: absolute;
-    /* top: 50%; */
-    /* left: 50%; */
-    transform: translate(117%,-10%);
+    transform: translate(57%,-10%);
 }
 
 #library {
@@ -39,12 +37,12 @@
     margin: 0 10px;
 }
 
-#add_make_10 {
+.lesson {
     padding: 5px;
     text-decoration: none;
     color: rgb(173,173,173);
 }
-#add_make_10:hover {
+.lesson:hover {
     background-color: rgba(179, 179, 185, 0.555);
     transition: 1s;
     opacity: 1;
@@ -67,6 +65,10 @@ img {
     font-weight: bold;
     color: rgb(133,140,156);
     text-align: left;
-    transform: translateX(187px);
+    transform: translateX(87px);
     font-size: 35px;
+}
+
+p {
+    text-align: center;
 }
