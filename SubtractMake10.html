@@ -13,18 +13,18 @@
         <source src="./audio/sandypiano.mp3" type="audio/mpeg">
     </audio>
     <!-- nhạc thông báo kết quả đúng -->
-    <audio id="true_audio" paused>
-        <source src="./audio/reyaduet.mp3" type="audio/mpeg">
+    <audio id="true_answer" >
+        <source src="./audio/thatsright.mp3" type="audio/mpeg">
     </audio>
     <!-- nhạc thông báo kết quả sai -->
-    <audio id="false_audio" paused>
-        <source src="./audio/peckpiano.mp3" type="audio/mpeg">
+    <audio id="false_answer" >
+        <source src="./audio/tryagain.mp3" type="audio/mpeg">
     </audio>
       
     <div id="background"></div>
     <!-- nút quay lại trang chủ -->
     <a class="home_button" href="index.html">
-        <img src="img/button/home3.png">
+        <img src="./img/button/home3.png">
     </a>
     <!-- khung nội dung -->
     <div class="gameContent">
@@ -38,7 +38,7 @@
         <!-- dữ liệu được lấy từ json -->
     </div>
     <div class="submit_button" onclick="checkResult()">
-        <img id="submit_button_img" src="img/button/submit.png">
+        <img id="submit_button_img" src="./img/button/submit.png">
     </div>
     <!-- </div> -->
     <!-- gợi ý -->
@@ -50,7 +50,7 @@
    
     <!-- con gấu thông báo kết quả, gợi ý -->
     <div class="teacher">
-        <img id="teacher_img" src="img/obj/teacher.png">
+        <img id="teacher_img" src="./img/teacher/thinking.gif" loop=infinite>
     </div>
     <!-- thông báo kết quả đúng hay sai kèm gợi ý -->
     <!-- <div class="announce_result">

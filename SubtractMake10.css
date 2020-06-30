@@ -49,9 +49,9 @@ body {
     color: brown;
     position: absolute;
     top: 150px;
-    right: 450px;
+    right: 200px;
     height: 250px;
-    width: 400px;
+    width: 550px;
 }
 
 .submit_button {
@@ -132,9 +132,8 @@ video{
 
 .teacher {
     position: absolute;
-    bottom: -3px;
-    right: 50px;
-
+    bottom: -19px;
+    right: 0px;
 }
 
 .teacher::after{

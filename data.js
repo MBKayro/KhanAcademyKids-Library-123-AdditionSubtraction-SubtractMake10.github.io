@@ -16,21 +16,21 @@ data = {
         "question": "5 - 3 = ?",
         "result": 2,
         "obj": "apple",
-        "number_obj": 4
+        "number_obj": 5
       },
       {
         "index": 2,
-        "question": "2 + 6 = ?",
-        "result": 8,
+        "question": "8 - 4 = ?",
+        "result": 4,
         "obj": "cheese",
         "number_obj": 8
       },
       {
         "index": 3,
-        "question": "7 - 3 = ?",
-        "result": 4,
+        "question": "7 - 1 = ?",
+        "result": 6,
         "obj": "apple",
-        "number_obj": 6
+        "number_obj": 7
       }
     ]
   }

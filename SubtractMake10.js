@@ -20,7 +20,7 @@ function createQuestion(question, obj, num_obj) {
     var contentHtml = "";
     for(let i = 0; i < num_obj; i++) {
         console.log("obj" + (i+1) + "\n");
-        contentHtml += "<div id=\"obj" + (i+1) + "\" class=\"obj\" onclick=\"crossLine('obj" + (i+1) + "')\">\n\t<img src=\"img/obj/"+ obj + ".png\">\n</div>"
+        contentHtml += "<div id=\"obj" + (i+1) + "\" class=\"obj\" onclick=\"crossLine('obj" + (i+1) + "')\">\n\t<img src=\"./img/obj/"+ obj + ".png\">\n</div>"
                         + "\n";
     }
     document.getElementById("box_holder").innerHTML = contentHtml;
@@ -30,7 +30,7 @@ function createQuestion(question, obj, num_obj) {
 // gạch chéo đối tượng khi click vào đối tượng chưa được gạch
 function crossLine(objClick) {
     console.log("click receive " + objClick);
-    document.getElementById(objClick).innerHTML = "<img src=\"img/obj/" + obj.obj + "_cross_line.png\">";
+    document.getElementById(objClick).innerHTML = "<img src=\"./img/obj/" + obj.obj + "_cross_line.png\">";
     document.getElementById(objClick).setAttribute("onclick", "deleteCrossLine('" + objClick +"')");
     total_obj--;
     console.log(total_obj);
@@ -39,7 +39,7 @@ function crossLine(objClick) {
 // bỏ gạch chéo đối tượng khi click vào đối tượng đã được gạch
 function deleteCrossLine(objClick) {
     console.log("click delete receive " + objClick);
-    document.getElementById(objClick).innerHTML = "<img src=\"img/obj/" + obj.obj + ".png\">";
+    document.getElementById(objClick).innerHTML = "<img src=\"./img/obj/" + obj.obj + ".png\">";
     document.getElementById(objClick).setAttribute("onclick", "crossLine('" + objClick +"')");
     total_obj++;
     console.log(total_obj);
@@ -50,7 +50,7 @@ function checkResult() {
     soundtrack.pause();
     if (total_obj == obj.result) {
         console.log("true !!!");
-        //true_answer.play();
+        true_answer.play();
         console.log("info obj: " + obj.index + "\nqs: " + obj.question 
             + "\nobj: " + obj.obj + " " + obj.number_obj);
         if (obj.index < number_of_question) {
@@ -58,15 +58,18 @@ function checkResult() {
             console.log("info obj: " + obj.index + "\nqs: " + obj.question 
             + "\nobj: " + obj.obj + " " + obj.number_obj);
             total_obj = obj.number_obj;
+            document.getElementById("teacher_img").setAttribute("src", "./img/teacher/true_answer.gif")
             createQuestion(obj.question, obj.obj, obj.number_obj);
         }
         else {
+            
             window.location="PassGame.html";
             console.log("Congratulation!!!");
         }
     }
     else {
-        console.log("lam lai di");
+        false_answer.play();
+        document.getElementById("teacher_img").setAttribute("src", "./img/teacher/false_answer.gif")
     }
 };
 
@@ -75,7 +78,7 @@ function playVideo() {
     obj.innerHTML = `
                     <video src="./img/hint_video.mp4" autoplay="true">
                     </video>
-                    <img id="close_button" onclick="closeVideo()" src="/img/button/close.png">`
+                    <img id="close_button" onclick="closeVideo()" src="./img/button/close.png">`
 
                     
     // obj.setAttribute("class", "video video_playing");
