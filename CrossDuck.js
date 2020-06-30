@@ -42,7 +42,6 @@ function deleteCross(objClick) {
 // kiểm tra kết quả đúng hay sai
 // tham số truyền vào: id dạng string
 function check(objClick) {
-    soundtrack.pause();
     var result_of_exp;
     switch (objClick) {
         case "duck_top_left": 
@@ -79,6 +78,7 @@ function check(objClick) {
             console.log("question.index: " + question.index + "number_of_question: " + number_of_question);
             if (question.index == number_of_question) {
                 console.log("pass game");
+                window.location="./index.html";
             }
             else {
                 deleteCross('duck_top_left');

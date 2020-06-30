@@ -9,7 +9,7 @@ data = {
     "teacher": {
       "img": "img/obj/teacher.png"
     },
-    "number_of_question": 3,
+    "number_of_question": 2,
     "info_question": [
       {
         "index": 1,
@@ -24,13 +24,6 @@ data = {
         "result": 4,
         "obj": "cheese",
         "number_obj": 8
-      },
-      {
-        "index": 3,
-        "question": "7 - 1 = ?",
-        "result": 6,
-        "obj": "apple",
-        "number_obj": 7
       }
     ]
   };
