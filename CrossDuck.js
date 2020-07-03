@@ -69,11 +69,9 @@ function check(objClick) {
         true_answer.play();
         total_false_exp++;
         cross(objClick);
-        obj = document.getElementById(`#${objClick}`);
-        //obj.querySelector("img").removeAttribute("onclick");
-        //console.log(img);
+        document.querySelector(`#${objClick} img`).removeAttribute("onclick");
+        document.querySelector(`#${objClick} .text`).removeAttribute("onclick");
         document.querySelector(`#${objClick} .cross`).classList.add("cross-selected");
-        console.log("log obj \n" + obj);
         // <div class="announce">222222</div>
         console.log("total_false_exp: " + total_false_exp + "number_false_exp: " + number_false_exp);
         if (total_false_exp == number_false_exp) {
