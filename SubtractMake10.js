@@ -62,8 +62,7 @@ function checkResult() {
             createQuestion(obj.question, obj.obj, obj.number_obj);
         }
         else {
-            window.location="./index.html";
-            console.log("Congratulation!!!");
+            createCongratulations();
         }
     }
     else {
@@ -92,3 +91,9 @@ function closeVideo() {
     document.getElementById("hint_video").setAttribute("onclick", "playVideo()");
 }
 
+function createCongratulations() {
+    obj = document.getElementById("congratulations");
+    obj.innerHTML = `<img id="congratulations_img" src="./img/congratulations.png" alt="">
+    <img id="home_text" src="./img/button/home_text.png" onclick='window.location="./index.html";'>
+    <img id="try_again_text" src="./img/button/try_again_text.png" onclick='window.location="./SubtractMake10.html";'>`
+}

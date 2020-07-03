@@ -69,16 +69,18 @@ function check(objClick) {
         true_answer.play();
         total_false_exp++;
         cross(objClick);
-        obj = document.querySelector(`#${objClick}`);
+        obj = document.getElementById(`#${objClick}`);
+        //obj.querySelector("img").removeAttribute("onclick");
+        //console.log(img);
         document.querySelector(`#${objClick} .cross`).classList.add("cross-selected");
-        console.log(obj);
+        console.log("log obj \n" + obj);
         // <div class="announce">222222</div>
         console.log("total_false_exp: " + total_false_exp + "number_false_exp: " + number_false_exp);
         if (total_false_exp == number_false_exp) {
             console.log("question.index: " + question.index + "number_of_question: " + number_of_question);
             if (question.index == number_of_question) {
                 console.log("pass game");
-                window.location="./index.html";
+                createCongratulations();
             }
             else {
                 deleteCross('duck_top_left');
@@ -100,3 +102,9 @@ function check(objClick) {
     }
 };
 
+function createCongratulations() {
+    obj = document.getElementById("congratulations");
+    obj.innerHTML = `<img id="congratulations_img" src="./img/congratulations.png" alt="">
+    <img id="home_text" src="./img/button/home_text.png" onclick='window.location="./index.html";'>
+    <img id="try_again_text" src="./img/button/try_again_text.png" onclick='window.location="./CrossDuck.html";'>`
+}
