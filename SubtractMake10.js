@@ -5,7 +5,7 @@ var info_question = data.info_question; // thông tin các phép toán
 var soundtrack = document.getElementById("soundtrack"); // nhạc nền
 var true_answer = document.getElementById("true_answer"); // nhạc làm đúng
 var false_answer = document.getElementById("false_answer"); // nhạc làm sai
-var complete = false;
+var congratulations_audio = document.getElementById("congratulations_audio"); // nhạc khi hoàn thành bài
 
 var obj = info_question[0];
 console.log("info obj: " + obj.index + "\nqs: " + obj.question 
@@ -62,6 +62,8 @@ function checkResult() {
             createQuestion(obj.question, obj.obj, obj.number_obj);
         }
         else {
+            true_answer.pause();
+            congratulations_audio.play();
             createCongratulations();
         }
     }
@@ -93,7 +95,8 @@ function closeVideo() {
 
 function createCongratulations() {
     obj = document.getElementById("congratulations");
+    obj.setAttribute("class", "congratulations_playing");
     obj.innerHTML = `<img id="congratulations_img" src="./img/congratulations.png" alt="">
     <img id="home_text" src="./img/button/home_text.png" onclick='window.location="./index.html";'>
-    <img id="try_again_text" src="./img/button/try_again_text.png" onclick='window.location="./SubtractMake10.html";'>`
+    <img id="try_again_text" src="./img/button/try_again_text.png" onclick='window.location="./CrossDuck.html";'>`
 }

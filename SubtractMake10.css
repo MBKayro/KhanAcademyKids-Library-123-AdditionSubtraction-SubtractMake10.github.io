@@ -167,7 +167,7 @@ video{
     z-index: 3;
 }
 
-#congratulations_img::before{
+.congratulations_playing::before{
     content: "";
     width: 100vw;
     height: 100vh;

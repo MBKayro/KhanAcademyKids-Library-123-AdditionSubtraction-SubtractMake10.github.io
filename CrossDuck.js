@@ -6,6 +6,7 @@ var info_question = data_crossduck.info_question; // thông tin các phép toán
 var soundtrack = document.getElementById("soundtrack"); // nhạc nền
 var true_answer = document.getElementById("true_answer"); // nhạc làm đúng
 var false_answer = document.getElementById("false_answer"); // nhạc làm sai
+var congratulations_audio = document.getElementById("congratulations_audio"); // nhạc khi hoàn thành bài
 
 var question = info_question[0];
 var total_false_exp = 0; // đại diện tổng số lượng biểu thức sai đã được gạch
@@ -28,15 +29,15 @@ function createQuestion(info_obj) {
 // gạch chéo đối tượng khi click vào biểu thức đúng
 // tham số truyền vào: id dưới dạng string 
 function cross(objClick) {
-    obj = document.querySelector(`#${objClick} img`);
+    document.querySelector(`#${objClick} img`);
     document.querySelector(`#${objClick} .cross`).classList.add("cross-selected");
-    console.log(obj);
 };
 
 function deleteCross(objClick) {
-    obj = document.querySelector(`#${objClick} img`);
+    str = "check('" + objClick + "')";
+    document.querySelector(`#${objClick} img`).setAttribute("onclick", str);
+    document.querySelector(`#${objClick} .text`).setAttribute("onclick", str);
     document.querySelector(`#${objClick} .cross`).classList.remove("cross-selected");
-    console.log(obj);
 };
 
 // kiểm tra kết quả đúng hay sai
@@ -69,8 +70,8 @@ function check(objClick) {
         true_answer.play();
         total_false_exp++;
         cross(objClick);
-        document.querySelector(`#${objClick} img`).removeAttribute("onclick");
-        document.querySelector(`#${objClick} .text`).removeAttribute("onclick");
+        document.querySelector(`#${objClick} img`).setAttribute("onclick", "");
+        document.querySelector(`#${objClick} .text`).setAttribute("onclick", "");
         document.querySelector(`#${objClick} .cross`).classList.add("cross-selected");
         // <div class="announce">222222</div>
         console.log("total_false_exp: " + total_false_exp + "number_false_exp: " + number_false_exp);
@@ -78,6 +79,8 @@ function check(objClick) {
             console.log("question.index: " + question.index + "number_of_question: " + number_of_question);
             if (question.index == number_of_question) {
                 console.log("pass game");
+                true_answer.pause();
+                congratulations_audio.play();
                 createCongratulations();
             }
             else {
