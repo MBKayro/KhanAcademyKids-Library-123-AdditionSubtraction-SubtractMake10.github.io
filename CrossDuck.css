@@ -35,6 +35,11 @@ img#coop {
 .duck {
     width: 271px;
     height: 254px;
+    cursor: pointer;
+}
+
+.duck_img {
+    
 }
 
 #duck_top_left {
@@ -111,7 +116,7 @@ img#coop {
 }
 
 #result_question {
-    z-index: 2;
+    z-index: 1;
     font-family: fantasy;
     font-size: 40px;
     color: red;
@@ -154,14 +159,14 @@ img#coop {
     z-index: 3;
 }
 
-#congratulations_img::before{
+.congratulations_playing::before{
     content: "";
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.678);
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0;    
     z-index: 2;
 }
 

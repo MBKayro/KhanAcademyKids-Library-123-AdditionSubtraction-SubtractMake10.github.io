@@ -79,7 +79,7 @@ function playVideo() {
                     <img id="close_button" onclick="closeVideo()" src="./img/button/close.png">`
 
                     
-    // obj.setAttribute("class", "video video_playing");
+    obj.setAttribute("class", "video video_playing");
     document.getElementById("hint_video").setAttribute("onclick", "");
 }
 

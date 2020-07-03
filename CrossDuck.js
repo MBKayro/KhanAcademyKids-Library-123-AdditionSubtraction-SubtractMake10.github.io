@@ -104,6 +104,7 @@ function check(objClick) {
 
 function createCongratulations() {
     obj = document.getElementById("congratulations");
+    obj.setAttribute("class", "congratulations_playing");
     obj.innerHTML = `<img id="congratulations_img" src="./img/congratulations.png" alt="">
     <img id="home_text" src="./img/button/home_text.png" onclick='window.location="./index.html";'>
     <img id="try_again_text" src="./img/button/try_again_text.png" onclick='window.location="./CrossDuck.html";'>`
