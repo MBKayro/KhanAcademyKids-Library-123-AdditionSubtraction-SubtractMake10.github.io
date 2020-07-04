@@ -2,16 +2,19 @@
 
 var number_of_question = data.number_of_question; // số phép toán
 var info_question = data.info_question; // thông tin các phép toán
-var soundtrack = document.getElementById("soundtrack"); // nhạc nền
-var true_answer = document.getElementById("true_answer"); // nhạc làm đúng
-var false_answer = document.getElementById("false_answer"); // nhạc làm sai
-var congratulations_audio = document.getElementById("congratulations_audio"); // nhạc khi hoàn thành bài
 
 var obj = info_question[0];
 console.log("info obj: " + obj.index + "\nqs: " + obj.question 
             + "\nobj: " + obj.obj + " " + obj.number_obj);
 var total_obj = obj.number_obj; // đại diện tổng số lượng đối tượng chưa bị gạch
+
 createQuestion(obj.question, obj.obj, obj.number_obj);
+
+createAudio();
+var soundtrack = document.getElementById("soundtrack"); // nhạc nền
+var true_answer = document.getElementById("true_answer"); // nhạc làm đúng
+var false_answer = document.getElementById("false_answer"); // nhạc làm sai
+var congratulations_audio = document.getElementById("congratulations_audio"); // nhạc khi hoàn thành bài
 
 // tạo ra hoa quả hay con vật làm đơn vị tính toán, hiển thị trên web 
 // tương ứng với số lượng đối tượng đề cho
@@ -26,6 +29,27 @@ function createQuestion(question, obj, num_obj) {
     document.getElementById("box_holder").innerHTML = contentHtml;
     document.getElementById("question").innerHTML = question;
 };
+
+//tạo nhạc cho game 
+function createAudio() {
+    document.getElementById("audio").innerHTML = `
+    <!-- nhạc nền -->
+    <audio id="soundtrack" autoplay loop>
+        <source src="${data.soundtrack}" type="audio/mpeg">
+    </audio>
+    <!-- nhạc thông báo kết quả đúng -->
+    <audio id="true_answer" >
+        <source src=${data.true_answer} type="audio/mpeg">
+    </audio>
+    <!-- nhạc thông báo kết quả sai -->
+    <audio id="false_answer" >
+        <source src=${data.false_answer} type="audio/mpeg">
+    </audio>
+    <!-- nhạc khi hoàn thành bài -->
+    <audio id="congratulations_audio">
+        <source src=${data.congratulations_audio} type="audio/mpeg">
+    </audio>`;
+}
 
 // gạch chéo đối tượng khi click vào đối tượng chưa được gạch
 function crossLine(objClick) {
@@ -59,12 +83,13 @@ function checkResult() {
             + "\nobj: " + obj.obj + " " + obj.number_obj);
             total_obj = obj.number_obj;
             document.getElementById("teacher_img").setAttribute("src", "./img/teacher/true_answer.gif")
-            createQuestion(obj.question, obj.obj, obj.number_obj);
+            setTimeout(function(){ createQuestion(obj.question, obj.obj, obj.number_obj); }, 3000);
         }
         else {
             true_answer.pause();
             congratulations_audio.play();
-            createCongratulations();
+            setTimeout(congratulations_func, 3000);
+            console.log("set time out \n");
         }
     }
     else {
@@ -93,10 +118,10 @@ function closeVideo() {
     document.getElementById("hint_video").setAttribute("onclick", "playVideo()");
 }
 
-function createCongratulations() {
+var congratulations_func = function createCongratulations() {
     obj = document.getElementById("congratulations");
     obj.setAttribute("class", "congratulations_playing");
     obj.innerHTML = `<img id="congratulations_img" src="./img/congratulations.png" alt="">
     <img id="home_text" src="./img/button/home_text.png" onclick='window.location="./index.html";'>
-    <img id="try_again_text" src="./img/button/try_again_text.png" onclick='window.location="./CrossDuck.html";'>`
+    <img id="try_again_text" src="./img/button/try_again_text.png" onclick='window.location="./SubtractMake10.html";'>`
 }

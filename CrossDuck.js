@@ -70,6 +70,7 @@ function check(objClick) {
         true_answer.play();
         total_false_exp++;
         cross(objClick);
+        console.log("cross " + objClick);
         document.querySelector(`#${objClick} img`).setAttribute("onclick", "");
         document.querySelector(`#${objClick} .text`).setAttribute("onclick", "");
         document.querySelector(`#${objClick} .cross`).classList.add("cross-selected");
@@ -81,19 +82,21 @@ function check(objClick) {
                 console.log("pass game");
                 true_answer.pause();
                 congratulations_audio.play();
-                createCongratulations();
+                setTimeout(function(){ createCongratulations(); }, 3000);
             }
             else {
-                deleteCross('duck_top_left');
-                deleteCross('duck_top');
-                deleteCross('duck_top_right');
-                deleteCross('duck_bottom_left');
-                deleteCross('duck_bottom_right');
+                setTimeout(function(){ 
+                    createQuestion(question); 
+                    deleteCross('duck_top_left');
+                    deleteCross('duck_top');
+                    deleteCross('duck_top_right');
+                    deleteCross('duck_bottom_left');
+                    deleteCross('duck_bottom_right');
+                }, 3000);
                 question = info_question[question.index]; // chuyển sang câu tiếp theo
                 console.log("next qs");
                 number_false_exp = question.number_false_exp;
                 total_false_exp = 0;
-                createQuestion(question);
             }
         }      
     }

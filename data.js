@@ -1,8 +1,9 @@
 data = {
     "background": "./img/background/background1.png",
     "soundtrack": "./audio/sandypiano.mp3",
-    "true_audio": "./audio/reyaduet.mp3",
-    "false_audio": "./audio/peckpiano.mp3",
+    "true_answer": "./audio/thatsright.mp3",
+    "false_answer": "./audio/tryagain.mp3",
+    "congratulations_audio": "./audio/thanksforplayingwithme.mp3",
     "home_button": "img/button/home3.png",
     "submit_button": "img/button/submit.png",
     "hint_video_button": "img/button/hint_video.png",
