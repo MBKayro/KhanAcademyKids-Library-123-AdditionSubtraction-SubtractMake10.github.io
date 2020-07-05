@@ -8,62 +8,46 @@
     <title>Cross Duck</title>
 </head>
 <body>
-    <!-- nhạc nền -->
-    <audio id="soundtrack" autoplay loop>
-        <source src="./audio/sandypiano.mp3" type="audio/mpeg">
-    </audio>
-    <!-- nhạc thông báo kết quả đúng -->
-    <audio id="true_answer">
-        <source src="./audio/thatsright.mp3" type="audio/mpeg">
-    </audio>
-    <!-- nhạc thông báo kết quả sai -->
-    <audio id="false_answer">
-        <source src="./audio/tryagain.mp3" type="audio/mpeg">
-    </audio>
-    <!-- nhạc khi hoàn thành bài -->
-    <audio id="congratulations_audio">
-        <source src="./audio/thanksforplayingwithme.mp3" type="audio/mpeg">
-    </audio>
+    <!-- nhạc nền, nhạc đúng sai, chúc mừng, được tạo ra từ JS -->
+    <div id="audio"></div>
       
     <div id="background"></div>
     <!-- nút quay lại trang chủ -->
     <a class="home_button" href="index.html">
         <img src="./img/button/home3.png">
     </a>
-    <!-- khung nội dung -->
-    <div class="gameContent">
-        <div>
-            <img id="coop" src="./img/gameduck/coop2.png">
-            <div id="result_question"></div>
+    <!-- chuồng vịt -->
+    <div>
+        <img id="coop" src="./img/gameduck/coop2.png">
+        <div id="result_question"></div>
+    </div>
+    <!-- các con vịt -->
+    <div class="ducks">
+        <div id="duck_top_left" class="duck">
+            <img class="duck_img" src="./img/gameduck/duck_top_left.png" onclick="check('duck_top_left')">
+            <div class="cross"></div>
+            <p id="text_duck_top_left" class="text" onclick="check('duck_top_left')"></p>
         </div>
-        <!-- các con vịt -->
-        <div class="ducks">
-            <div id="duck_top_left" class="duck">
-                <img class="duck_img" src="./img/gameduck/duck_top_left.png" onclick="check('duck_top_left')">
-                <div class="cross"></div>
-                <p id="text_duck_top_left" class="text" onclick="check('duck_top_left')"></p>
-            </div>
-            <div id="duck_top" class="duck">
-                <img class="duck_img" src="./img/gameduck/duck_top.png" onclick="check('duck_top')">
-                <div class="cross"></div>
-                <p id="text_duck_top" class="text" onclick="check('duck_top')"></p>
-            </div>
-            <div id="duck_top_right" class="duck">
-                <img class="duck_img" src="./img/gameduck/duck_top_right.png" onclick="check('duck_top_right')">
-                <div class="cross"></div>
-                <p id="text_duck_top_right" class="text" onclick="check('duck_top_right')"></p>
-            </div>
-            <div id="duck_bottom_left" class="duck">
-                <img class="duck_img" src="./img/gameduck/duck_bottom_left.png" onclick="check('duck_bottom_left')">
-                <div class="cross"></div>
-                <p id="text_duck_bottom_left" class="text" onclick="check('duck_bottom_left')"></p>
-            </div>
-            <div id="duck_bottom_right" class="duck">
-                <img class="duck_img" src="./img/gameduck/duck_bottom_right.png" onclick="check('duck_bottom_right')">
-                <div class="cross"></div>
-                <p id="text_duck_bottom_right" class="text" onclick="check('duck_bottom_right')"></p>
-            </div>
-        </div> 
+        <div id="duck_top" class="duck">
+            <img class="duck_img" src="./img/gameduck/duck_top.png" onclick="check('duck_top')">
+            <div class="cross"></div>
+            <p id="text_duck_top" class="text" onclick="check('duck_top')"></p>
+        </div>
+        <div id="duck_top_right" class="duck">
+            <img class="duck_img" src="./img/gameduck/duck_top_right.png" onclick="check('duck_top_right')">
+            <div class="cross"></div>
+            <p id="text_duck_top_right" class="text" onclick="check('duck_top_right')"></p>
+        </div>
+        <div id="duck_bottom_left" class="duck">
+            <img class="duck_img" src="./img/gameduck/duck_bottom_left.png" onclick="check('duck_bottom_left')">
+            <div class="cross"></div>
+            <p id="text_duck_bottom_left" class="text" onclick="check('duck_bottom_left')"></p>
+        </div>
+        <div id="duck_bottom_right" class="duck">
+            <img class="duck_img" src="./img/gameduck/duck_bottom_right.png" onclick="check('duck_bottom_right')">
+            <div class="cross"></div>
+            <p id="text_duck_bottom_right" class="text" onclick="check('duck_bottom_right')"></p>
+        </div>
     </div>
     <!-- chúc mừng hoàn thành -->
     <div id="congratulations">
