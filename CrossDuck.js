@@ -50,8 +50,9 @@ function createAudio() {
 // gạch chéo đối tượng khi click vào biểu thức đúng
 // tham số truyền vào: id dưới dạng string 
 function cross(objClick) {
-    document.querySelector(`#${objClick} img`);
-    document.querySelector(`#${objClick} .cross`).classList.add("cross-selected");
+    document.querySelector(`#${objClick} img`).setAttribute("onclick", "");
+    document.querySelector(`#${objClick} .text`).setAttribute("onclick", "");
+    document.querySelector(`#${objClick} .cross`).classList.add("cross_selected");
 };
 
 // bỏ gạch chéo đối tượng
@@ -60,7 +61,8 @@ function deleteCross(objClick) {
     str = "check('" + objClick + "')";
     document.querySelector(`#${objClick} img`).setAttribute("onclick", str);
     document.querySelector(`#${objClick} .text`).setAttribute("onclick", str);
-    document.querySelector(`#${objClick} .cross`).classList.remove("cross-selected");
+    document.querySelector(`#${objClick} .cross`).classList.remove("cross_selected");
+    document.querySelector(`#${objClick} .cross_text`).innerHTML = "";
 };
 
 // kiểm tra kết quả đúng hay sai
@@ -91,11 +93,16 @@ function check(objClick) {
         true_answer.play();
         total_false_exp++;
         cross(objClick);
-        console.log("cross " + objClick);
-        document.querySelector(`#${objClick} img`).setAttribute("onclick", "");
-        document.querySelector(`#${objClick} .text`).setAttribute("onclick", "");
-        document.querySelector(`#${objClick} .cross`).classList.add("cross-selected");
+        document.querySelector(`#${objClick} .cross_text`).innerHTML = `
+        <img class="cross_true_text" src="./img/gameduck/true_cross.png">`;
+        setTimeout(function() {
+            document.querySelector(`#${objClick} .cross_text`).innerHTML = "";
+        }, 1500);
+
+        // nếu tổng số vịt đã gạch bằng tổng số biểu thức sai
         if (total_false_exp == number_false_exp) {
+            // nếu chỉ số câu hỏi bằng với số lượng câu hỏi
+            // tức là đã hoàn thành xong bài học
             if (question.index == number_of_question) {
                 console.log("pass game");
                 true_answer.pause();
@@ -118,8 +125,14 @@ function check(objClick) {
             }
         }      
     }
+    // nếu gạch sai
     else {
         false_answer.play();
+        document.querySelector(`#${objClick} .cross_text`).innerHTML = `
+        <img class="cross_false_text" src="./img/gameduck/false_cross.png">`;
+        setTimeout(function() {
+            document.querySelector(`#${objClick} .cross_text`).innerHTML = "";
+        }, 1500);
         console.log("cross false");
     }
 };
