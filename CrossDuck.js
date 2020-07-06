@@ -12,6 +12,7 @@ createAudio();
 var soundtrack = document.getElementById("soundtrack"); // nhạc nền
 var true_answer = document.getElementById("true_answer"); // nhạc làm đúng
 var false_answer = document.getElementById("false_answer"); // nhạc làm sai
+var pass_question = document.getElementById("pass_question"); // nhạc hoàn thành xong câu hỏi
 var congratulations_audio = document.getElementById("congratulations_audio"); // nhạc khi hoàn thành bài
 
 // tạo ra kết quả cần so sánh và các phép tính hiển thị trên mỗi con vịt theo thứ tự trái sang phải, trên xuống dưới
@@ -40,6 +41,10 @@ function createAudio() {
     <!-- nhạc thông báo kết quả sai -->
     <audio id="false_answer" >
         <source src=${data_crossduck.false_answer} type="audio/mpeg">
+    </audio>
+    <!-- nhạc hoàn thành câu hỏi -->
+    <audio id="pass_question" >
+        <source src=${data_crossduck.pass_question} type="audio/mpeg">
     </audio>
     <!-- nhạc khi hoàn thành bài -->
     <audio id="congratulations_audio">
@@ -97,7 +102,7 @@ function check(objClick) {
         <img class="cross_true_text" src="./img/gameduck/true_cross.png">`;
         setTimeout(function() {
             document.querySelector(`#${objClick} .cross_text`).innerHTML = "";
-        }, 1500);
+        }, 2000);
 
         // nếu tổng số vịt đã gạch bằng tổng số biểu thức sai
         if (total_false_exp == number_false_exp) {
@@ -109,7 +114,10 @@ function check(objClick) {
                 congratulations_audio.play();
                 setTimeout(function(){ createCongratulations(); }, 3000);
             }
+            // chuyển sang câu hỏi tiếp theo
             else {
+                true_answer.pause();
+                pass_question.play();
                 setTimeout(function(){ 
                     createQuestion(question); 
                     deleteCross('duck_top_left');

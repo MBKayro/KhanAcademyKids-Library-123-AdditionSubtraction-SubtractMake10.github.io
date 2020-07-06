@@ -66,7 +66,6 @@ function deleteCrossLine(objClick) {
 
 // kiểm tra kết quả đúng hay sai
 function checkResult() {
-    soundtrack.pause();
     if (total_obj == obj.result) {
         console.log("true answer!!!\n");
         true_answer.play();

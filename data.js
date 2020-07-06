@@ -37,6 +37,7 @@ data = {
     "soundtrack": "./audio/sandypiano.mp3",
     "true_answer": "./audio/thatsright.mp3",
     "false_answer": "./audio/tryagain.mp3",
+    "pass_question": "./audio/super.mp3",
     "congratulations_audio": "./audio/thanksforplayingwithme.mp3",
     "home_button": "img/button/home3.png",
     "number_of_question": 2,
