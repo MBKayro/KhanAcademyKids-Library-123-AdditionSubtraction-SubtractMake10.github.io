@@ -29,6 +29,7 @@ function createQuestion(info_obj) {
 
 //tạo nhạc cho game 
 function createAudio() {
+    console.log("create audio\n");
     document.getElementById("audio").innerHTML = `
     <!-- nhạc nền -->
     <audio id="soundtrack" autoplay loop>
@@ -55,6 +56,7 @@ function createAudio() {
 // gạch chéo đối tượng khi click vào biểu thức đúng
 // tham số truyền vào: id dưới dạng string 
 function cross(objClick) {
+    console.log("cross " + objClick);
     document.querySelector(`#${objClick} img`).setAttribute("onclick", "");
     document.querySelector(`#${objClick} .text`).setAttribute("onclick", "");
     document.querySelector(`#${objClick} .cross`).classList.add("cross_selected");
@@ -63,6 +65,7 @@ function cross(objClick) {
 // bỏ gạch chéo đối tượng
 // tham số truyền vào: id dưới dạng string 
 function deleteCross(objClick) {
+    console.log("delete cross\n");
     str = "check('" + objClick + "')";
     document.querySelector(`#${objClick} img`).setAttribute("onclick", str);
     document.querySelector(`#${objClick} .text`).setAttribute("onclick", str);
@@ -73,6 +76,7 @@ function deleteCross(objClick) {
 // kiểm tra kết quả đúng hay sai
 // tham số truyền vào: id dạng string
 function check(objClick) {
+    console.log("check obj " + objClick);
     var result_of_exp;
     switch (objClick) {
         case "duck_top_left": 
@@ -146,6 +150,7 @@ function check(objClick) {
 };
 
 function createCongratulations() {
+    console.log("Create congras\n");
     obj = document.getElementById("congratulations");
     obj.setAttribute("class", "congratulations_playing");
     obj.innerHTML = `<img id="congratulations_img" src="./img/congratulations.png" alt="">

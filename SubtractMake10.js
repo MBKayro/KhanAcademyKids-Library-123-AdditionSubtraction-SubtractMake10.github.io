@@ -29,6 +29,7 @@ function createQuestion(question, obj, num_obj) {
 
 //tạo nhạc cho game 
 function createAudio() {
+    console.log("Create audio\n");
     document.getElementById("audio").innerHTML = `
     <!-- nhạc nền -->
     <audio id="soundtrack" autoplay loop>
@@ -89,6 +90,7 @@ function checkResult() {
 
 // mở video gợi ý
 function playVideo() {
+    console.log("play video\n");
     obj = document.getElementById("video");
     obj.innerHTML = `
                     <video src="`+ data.video + `" autoplay="true">
@@ -109,6 +111,7 @@ function closeVideo() {
 
 // tạo màn hình chúc mừng hoàn thành bài
 function createCongratulations() {
+    console.log("Create congras \n");
     obj = document.getElementById("congratulations");
     obj.setAttribute("class", "congratulations_playing");
     obj.innerHTML = `<img id="congratulations_img" src="./img/congratulations.png" alt="">
