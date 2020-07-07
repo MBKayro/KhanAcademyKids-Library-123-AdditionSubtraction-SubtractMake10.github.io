@@ -74,7 +74,10 @@ function checkResult() {
             obj = info_question[obj.index]; // câu hỏi tiếp theo
             total_obj = obj.number_obj;
             document.getElementById("teacher_img").setAttribute("src", data.teacher.true_answer);
-            setTimeout(function(){ createQuestion(obj.question, obj.obj, obj.number_obj); }, 3000);
+            setTimeout(function(){ 
+                createQuestion(obj.question, obj.obj, obj.number_obj); 
+                document.getElementById("teacher_img").setAttribute("src", data.teacher.thinking);
+            }, 3000);
         }
         else {
             true_answer.pause();

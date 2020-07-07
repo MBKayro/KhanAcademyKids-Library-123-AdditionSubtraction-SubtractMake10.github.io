@@ -9,7 +9,8 @@ data = {
     "hint_video_button": "img/button/hint_video.png",
     "video": "./img/hint_video.mp4",
     "teacher": {
-      "img": "img/obj/teacher.png",
+      "img": "./img/obj/teacher.png",
+      "thinking": "./img/teacher/thinking.gif",
       "true_answer": "./img/teacher/true_answer.gif",
       "false_answer": "./img/teacher/false_answer.gif"
     },
