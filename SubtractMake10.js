@@ -51,7 +51,7 @@ function createAudio() {
 
 // gạch chéo đối tượng khi click vào đối tượng chưa được gạch
 function crossLine(objClick) {
-    console.log("cross line");
+    console.log("cross line " + objClick);
     document.getElementById(objClick).innerHTML = "<img src=\"./img/obj/" + obj.obj + "_cross_line.png\">";
     document.getElementById(objClick).setAttribute("onclick", "deleteCrossLine('" + objClick +"')");
     total_obj--;
@@ -92,12 +92,12 @@ function checkResult() {
 function playVideo() {
     console.log("play video\n");
     soundtrack.pause();
-    obj = document.getElementById("video");
-    obj.innerHTML = `
+    video_obj = document.getElementById("video");
+    video_obj.innerHTML = `
                     <video src="`+ data.video + `" autoplay="true">
                     </video>
                     <img id="close_button" onclick="closeVideo()" src="./img/button/close.png">`;
-    obj.setAttribute("class", "video video_playing");
+    video_obj.setAttribute("class", "video video_playing");
     document.getElementById("hint_video").setAttribute("onclick", "");
 }
 
@@ -105,18 +105,18 @@ function playVideo() {
 function closeVideo() {
     console.log("close video\n");
     soundtrack.play();
-    obj = document.getElementById("video");
-    obj.setAttribute("class", "video");
-    obj.innerHTML = '';
+    video_obj = document.getElementById("video");
+    video_obj.setAttribute("class", "video");
+    video_obj.innerHTML = '';
     document.getElementById("hint_video").setAttribute("onclick", "playVideo()");
 }
 
 // tạo màn hình chúc mừng hoàn thành bài
 function createCongratulations() {
     console.log("Create congras \n");
-    obj = document.getElementById("congratulations");
-    obj.setAttribute("class", "congratulations_playing");
-    obj.innerHTML = `<img id="congratulations_img" src="./img/congratulations.png" alt="">
+    congratulations_obj = document.getElementById("congratulations");
+    congratulations_obj.setAttribute("class", "congratulations_playing");
+    congratulations_obj.innerHTML = `<img id="congratulations_img" src="./img/congratulations.png" alt="">
     <img id="home_text" src="./img/button/home_text.png" onclick='window.location="./index.html";'>
     <img id="try_again_text" src="./img/button/try_again_text.png" onclick='window.location="./SubtractMake10.html";'>`
 }
