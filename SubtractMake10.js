@@ -82,6 +82,7 @@ function checkResult() {
         else {
             true_answer.pause();
             congratulations_audio.play();
+            document.getElementById("teacher_img").setAttribute("src", data.teacher.true_answer);
             setTimeout(function(){ createCongratulations(); }, 3000);
         }
     }
