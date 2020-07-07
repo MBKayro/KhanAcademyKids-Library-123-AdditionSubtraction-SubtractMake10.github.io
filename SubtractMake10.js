@@ -91,6 +91,7 @@ function checkResult() {
 // mở video gợi ý
 function playVideo() {
     console.log("play video\n");
+    soundtrack.pause();
     obj = document.getElementById("video");
     obj.innerHTML = `
                     <video src="`+ data.video + `" autoplay="true">
@@ -103,6 +104,7 @@ function playVideo() {
 // đóng video gợi ý khi click vào nút X
 function closeVideo() {
     console.log("close video\n");
+    soundtrack.play();
     obj = document.getElementById("video");
     obj.setAttribute("class", "video");
     obj.innerHTML = '';
