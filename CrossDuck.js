@@ -157,3 +157,23 @@ function createCongratulations() {
     <img id="home_text" src="./img/button/home_text.png" onclick='window.location="./index.html";'>
     <img id="try_again_text" src="./img/button/try_again_text.png" onclick='window.location="./CrossDuck.html";'>`
 }
+
+// mở gợi ý
+function openHint() {
+    console.log("open hint text\n");
+    hint_obj = document.getElementById("hint_text");
+    hint_obj.innerHTML = `
+                    <img id="hint_text_img" src="./img/gameduck/hint_text.png">
+                    <img id="close_button" onclick="closeHint()" src="./img/button/close.png">`;
+                    hint_obj.setAttribute("class", "hint hint_opening");
+    document.getElementById("hint").setAttribute("onclick", "");
+}
+
+// đóng gợi ý khi click vào nút X
+function closeHint() {
+    console.log("close hint\n");
+    hint_obj = document.getElementById("hint_text");
+    hint_obj.setAttribute("class", "hint");
+    hint_obj.innerHTML = '';
+    document.getElementById("hint").setAttribute("onclick", "openHint()");
+}
